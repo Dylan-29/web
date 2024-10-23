@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: font name;Akaya Televigala 
+            margin: 20px;
+        }
+        .resultado {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #9B59B6;
+            background-color: #80DEEA;
+        }
+    </style>
+</head>
+<body>
+<style>
+	body{
+	background-color: #78909C;
+	}
+	</style>
+   <b>
+  
+	<h1><font color="#A5D6A7" face="Algerian" size="20" >Calculadora </font></h1>
+    
+    <font color="#A5D6A7" <label for="num1"> Número 1:</label><br></font>
+    <input id="num1" type="number" /><br>
+    <br>
+     <font color="#A5D6A7"<label for="num2"> Número 2:</label><br></font>
+    <input id="num2" type="number" /><br>
+    
+    <br>
+    <button onclick="calcular('suma')">Sumar</button>
+    <button onclick="calcular('resta')">Restar</button>
+    <button onclick="calcular('multiplicacion')">Multiplicar</button>
+    <button onclick="calcular('division')">Dividir</button>
+
+    <div class="resultado" id="resultado"></div>
+
+    <script>
+        function calcular(op) {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var resultado;
+
+            if (isNaN(num1) || isNaN(num2)) {
+                resultado = "introduce números válidos.";
+            } else {
+                switch (op) {
+                    case 'suma':
+                        resultado = "Resultado: " + (num1 + num2);
+                        break;
+                    case 'resta':
+                        resultado = "Resultado: " + (num1 - num2);
+                        break;
+                    case 'multiplicacion':
+                        resultado = "Resultado: " + (num1 * num2);
+                        break;
+                    case 'division':
+                        if (num2 !== 0) {
+                            resultado = "Resultado: " + (num1 / num2);
+                        } else {
+                            resultado = "Error: División por cero.";
+                        }
+                        break;
+                }
+            }
+            document.getElementById("resultado").innerText = resultado;
+        }
+    </script>
+</body>
+<b>
+</html>
